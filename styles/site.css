@@ -182,6 +182,17 @@ h2 {
     font-size: 1.05rem;
 }
 
+.bio a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+}
+
+.bio a:hover,
+.bio a:focus-visible {
+    color: var(--accent-dark);
+}
+
 .chip,
 .action {
     display: inline-flex;
