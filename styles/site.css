@@ -162,6 +162,17 @@ h2 {
     color: var(--muted);
 }
 
+.subtitle a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+}
+
+.subtitle a:hover,
+.subtitle a:focus-visible {
+    color: var(--accent-dark);
+}
+
 .link-row {
     display: flex;
     flex-wrap: wrap;
