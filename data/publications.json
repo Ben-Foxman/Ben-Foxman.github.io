@@ -15,7 +15,8 @@
         "summary": "We give extremely efficient circuits for random unitaries, with applications in complexity theory and learning theory.",
         "links": {
             "arxiv": "https://arxiv.org/abs/2508.11487",
-            "pdf": "papers/pru2025.pdf"
+            "pdf": "papers/pru2025.pdf",
+            "talk": "https://youtu.be/Dg0teycS-RQ"
         }
     },
     {
@@ -25,7 +26,8 @@
         "summary": "We present a novel, error-resilient architecture for quantum random access memory (QRAM).",
         "links": {
             "arxiv": "https://arxiv.org/abs/2306.03242",
-            "pdf": "papers/qram2023.pdf"
+            "pdf": "papers/qram2023.pdf",
+            "talk": "https://www.youtube.com/watch?v=5SS-LvNoVrA"
         }
     }
 ]
