@@ -1,9 +1,18 @@
 [
     {
+        "title": "Efficient Quantum Fourier Transforms for Semisimple Algebras",
+        "authors": "Ben Foxman, Barak Nehoran, Yongshan Ding",
+        "venue": "In Submission",
+        "summary": "We generalize the famous quantum Fourier transform (QFT) to semisimple algebras.",
+        "links": {
+            "arxiv": "https://arxiv.org/abs/2306.03242"
+        }
+    },
+    {
         "title": "Random Unitaries in Constant (Quantum) Time",
         "authors": "Ben Foxman, Natalie Parham, Francisca Vasconcelos, Henry Yuen",
         "venue": "QIP '26, ITCS '26",
-        "summary": "arXiv:2508.11487",
+        "summary": "We give extremely efficient circuits for random unitaries, with applications in quantum complexity theory and learning theory.",
         "links": {
             "arxiv": "https://arxiv.org/abs/2508.11487"
         }
@@ -12,7 +21,7 @@
         "title": "Systems Architecture for Quantum Random Access Memory",
         "authors": "Shifan Xu, Connor T. Hann, Ben Foxman, Steven M. Girvin, Yongshan Ding",
         "venue": "MICRO '23",
-        "summary": "arXiv:2306.03242",
+        "summary": "We present a novel, error-resilient architecture for quantum random access memory (QRAM).",
         "links": {
             "arxiv": "https://arxiv.org/abs/2306.03242"
         }
