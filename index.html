@@ -5,81 +5,322 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Foxman</title>
     <style>
+        :root {
+            color-scheme: light;
+            --bg: #f5f1e8;
+            --panel: rgba(255, 252, 245, 0.92);
+            --panel-strong: #fffdf8;
+            --text: #1f1a17;
+            --muted: #655a52;
+            --accent: #b05a3c;
+            --accent-dark: #88432b;
+            --border: rgba(87, 68, 55, 0.14);
+            --shadow: 0 24px 60px rgba(68, 49, 37, 0.12);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --radius-sm: 999px;
+            --max-width: 980px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            color: #333;
-            background-color: #fafafa;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: -0.5px;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-        }
-
-        nav {
-            margin-top: 2rem;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .nav-links li {
-            font-size: 1.1rem;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(232, 182, 145, 0.38), transparent 30%),
+                radial-gradient(circle at top right, rgba(196, 214, 176, 0.34), transparent 26%),
+                linear-gradient(180deg, #fcfaf4 0%, var(--bg) 100%);
+            min-height: 100vh;
         }
 
         a {
-            color: #3498db;
+            color: inherit;
+        }
+
+        .page {
+            width: min(calc(100% - 2rem), var(--max-width));
+            margin: 0 auto;
+            padding: 2.5rem 0 4rem;
+        }
+
+        .hero,
+        .section {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        .headshot {
+            aspect-ratio: 1;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(87, 68, 55, 0.16);
+            background:
+                linear-gradient(160deg, rgba(176, 90, 60, 0.14), rgba(176, 90, 60, 0)),
+                linear-gradient(135deg, #efe1d3, #d7e0cc);
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+        .headshot::before {
+            content: "BF";
+            width: 68%;
+            height: 68%;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 3rem;
+            letter-spacing: 0.08em;
+            color: rgba(31, 26, 23, 0.78);
+            background: rgba(255, 252, 245, 0.82);
+            border: 1px solid rgba(87, 68, 55, 0.14);
+        }
+
+        .eyebrow {
+            margin: 0 0 0.75rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            margin-bottom: 0.75rem;
+            font-size: clamp(2.6rem, 7vw, 4.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            max-width: 42rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            color: var(--muted);
+        }
+
+        .link-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .chip,
+        .action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.8rem;
+            padding: 0.72rem 1.15rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid transparent;
             text-decoration: none;
-            transition: color 0.2s ease;
-            border-bottom: 1px solid transparent;
+            transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
         }
 
-        a:hover {
-            color: #2980b9;
-            border-bottom-color: #2980b9;
+        .chip {
+            color: var(--panel-strong);
+            background: var(--accent);
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 1rem;
+        .chip:hover,
+        .chip:focus-visible {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .main {
+            margin-top: 1.5rem;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .section {
+            padding: 1.75rem;
+        }
+
+        h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.45rem;
+        }
+
+        .section-intro {
+            margin-bottom: 1.5rem;
+            color: var(--muted);
+        }
+
+        .bio {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .publication-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .publication {
+            padding: 1.35rem;
+            background: var(--panel-strong);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+        }
+
+        .publication h3 {
+            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+        }
+
+        .publication-meta,
+        .publication-summary {
+            color: var(--muted);
+        }
+
+        .publication-meta {
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
+        }
+
+        .publication-summary {
+            margin-bottom: 1rem;
+        }
+
+        .publication-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .action {
+            color: var(--accent);
+            background: rgba(176, 90, 60, 0.08);
+            border-color: rgba(176, 90, 60, 0.16);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .action:hover,
+        .action:focus-visible {
+            color: var(--panel-strong);
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                width: min(calc(100% - 1.25rem), var(--max-width));
+                padding-top: 1.25rem;
             }
 
-            h1 {
-                font-size: 2rem;
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
+            .headshot {
+                width: min(240px, 100%);
+                margin: 0 auto;
+            }
+
+            .link-row,
+            .publication-actions {
+                justify-content: center;
+            }
+
+            .section {
+                padding: 1.35rem;
             }
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1>Ben Foxman</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="blogroll.html">Blogroll</a></li>
-                <li><a href="chess.html">Chess</a></li>
-                <li><a href="go.html">Go</a></li>
-                <li><a href="piano.html">Piano</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="thoughts.html">Other Thoughts</a></li>
-            </ul>
-        </nav>
-    </main>
+    <div class="page">
+        <header class="hero">
+            <div class="headshot" aria-label="Headshot placeholder for Ben Foxman"></div>
+            <div>
+                <p class="eyebrow">Personal Website</p>
+                <h1>Ben Foxman</h1>
+                <p class="subtitle">
+                    Add a one-line description of your work here, along with the links you want visitors to see first.
+                </p>
+                <div class="link-row">
+                    <a class="chip" href="mailto:your-email@example.com">Email</a>
+                    <a class="chip" href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a>
+                    <a class="chip" href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+                    <a class="chip" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="section" aria-labelledby="bio-heading">
+                <h2 id="bio-heading">Bio</h2>
+                <p class="bio">
+                    Use this short section for a two- or three-sentence introduction: who you are, what you work on, and the themes that connect your research or projects.
+                </p>
+            </section>
+
+            <section class="section" aria-labelledby="publications-heading">
+                <h2 id="publications-heading">Publications</h2>
+                <p class="section-intro">
+                    Replace the titles, summaries, and links below with your actual papers. Each entry already includes the button layout you asked for.
+                </p>
+
+                <div class="publication-list">
+                    <article class="publication">
+                        <h3>Publication Title One</h3>
+                        <p class="publication-meta">Author One, Ben Foxman, Author Three • 2026</p>
+                        <p class="publication-summary">
+                            A short summary of the contribution goes here. Keep this to one or two sentences so the list stays easy to scan.
+                        </p>
+                        <div class="publication-actions">
+                            <a class="action" href="https://arxiv.org/" target="_blank" rel="noreferrer">arxiv</a>
+                            <a class="action" href="papers/publication-one.pdf" target="_blank" rel="noreferrer">pdf</a>
+                            <a class="action" href="https://youtube.com/" target="_blank" rel="noreferrer">talk</a>
+                            <a class="action" href="slides/publication-one.pdf" target="_blank" rel="noreferrer">slides</a>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <h3>Publication Title Two</h3>
+                        <p class="publication-meta">Ben Foxman, Author Two • 2025</p>
+                        <p class="publication-summary">
+                            Add a short description of the result, the venue, or the motivating problem for this paper.
+                        </p>
+                        <div class="publication-actions">
+                            <a class="action" href="https://arxiv.org/" target="_blank" rel="noreferrer">arxiv</a>
+                            <a class="action" href="papers/publication-two.pdf" target="_blank" rel="noreferrer">pdf</a>
+                            <a class="action" href="https://youtube.com/" target="_blank" rel="noreferrer">talk</a>
+                            <a class="action" href="slides/publication-two.pdf" target="_blank" rel="noreferrer">slides</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
