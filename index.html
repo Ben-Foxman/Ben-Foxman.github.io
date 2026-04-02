@@ -7,19 +7,22 @@
     <style>
         :root {
             color-scheme: light;
-            --bg: #f5f1e8;
-            --panel: rgba(255, 252, 245, 0.92);
-            --panel-strong: #fffdf8;
-            --text: #1f1a17;
-            --muted: #655a52;
-            --accent: #b05a3c;
-            --accent-dark: #88432b;
-            --border: rgba(87, 68, 55, 0.14);
-            --shadow: 0 24px 60px rgba(68, 49, 37, 0.12);
-            --radius-lg: 28px;
-            --radius-md: 18px;
+            --bg: #edf2f9;
+            --bg-strong: #e4ecf7;
+            --panel: rgba(255, 255, 255, 0.92);
+            --panel-strong: #ffffff;
+            --text: #10233b;
+            --muted: #4d6179;
+            --accent: #0f5cc0;
+            --accent-dark: #0a468f;
+            --accent-soft: rgba(15, 92, 192, 0.08);
+            --border: rgba(16, 35, 59, 0.12);
+            --shadow: 0 18px 40px rgba(18, 38, 63, 0.08);
+            --shadow-pop: 0 26px 50px rgba(18, 38, 63, 0.16);
+            --radius-lg: 24px;
+            --radius-md: 16px;
             --radius-sm: 999px;
-            --max-width: 980px;
+            --max-width: 1040px;
         }
 
         * {
@@ -28,12 +31,15 @@
 
         body {
             margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
             color: var(--text);
             background:
-                radial-gradient(circle at top left, rgba(232, 182, 145, 0.38), transparent 30%),
-                radial-gradient(circle at top right, rgba(196, 214, 176, 0.34), transparent 26%),
-                linear-gradient(180deg, #fcfaf4 0%, var(--bg) 100%);
+                linear-gradient(rgba(17, 38, 63, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(17, 38, 63, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at top left, rgba(15, 92, 192, 0.08), transparent 30%),
+                radial-gradient(circle at top right, rgba(14, 116, 144, 0.08), transparent 26%),
+                linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+            background-size: 28px 28px, 28px 28px, auto, auto, auto;
             min-height: 100vh;
         }
 
@@ -54,6 +60,16 @@
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow);
             backdrop-filter: blur(10px);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .hero:hover,
+        .hero:focus-within,
+        .section:hover,
+        .section:focus-within {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-pop);
+            border-color: rgba(15, 92, 192, 0.18);
         }
 
         .hero {
@@ -62,20 +78,38 @@
             gap: 2rem;
             padding: 2rem;
             align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 2rem 0 2rem;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(15, 92, 192, 0.24), rgba(15, 92, 192, 0));
         }
 
         .headshot {
             aspect-ratio: 1;
             width: 100%;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(87, 68, 55, 0.16);
+            border: 1px solid rgba(16, 35, 59, 0.14);
             background:
-                linear-gradient(160deg, rgba(176, 90, 60, 0.14), rgba(176, 90, 60, 0)),
-                linear-gradient(135deg, #efe1d3, #d7e0cc);
+                radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.75), transparent 28%),
+                linear-gradient(160deg, rgba(15, 92, 192, 0.2), rgba(15, 92, 192, 0)),
+                linear-gradient(135deg, #dbe8f8, #eef4fb);
             display: grid;
             place-items: center;
             position: relative;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .headshot:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 34px rgba(18, 38, 63, 0.14);
+            border-color: rgba(15, 92, 192, 0.22);
         }
 
         .headshot::before {
@@ -87,14 +121,15 @@
             place-items: center;
             font-size: 3rem;
             letter-spacing: 0.08em;
-            color: rgba(31, 26, 23, 0.78);
-            background: rgba(255, 252, 245, 0.82);
-            border: 1px solid rgba(87, 68, 55, 0.14);
+            color: rgba(16, 35, 59, 0.78);
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid rgba(16, 35, 59, 0.12);
         }
 
         .eyebrow {
             margin: 0 0 0.75rem;
-            font-size: 0.85rem;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.8rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             color: var(--accent);
@@ -110,15 +145,16 @@
         h1 {
             margin-bottom: 0.75rem;
             font-size: clamp(2.6rem, 7vw, 4.5rem);
-            line-height: 0.95;
+            line-height: 0.97;
             letter-spacing: -0.04em;
             font-weight: 600;
+            font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
         }
 
         .subtitle {
             max-width: 42rem;
             margin-bottom: 1.5rem;
-            font-size: 1.15rem;
+            font-size: 1.08rem;
             color: var(--muted);
         }
 
@@ -138,18 +174,22 @@
             border-radius: var(--radius-sm);
             border: 1px solid transparent;
             text-decoration: none;
-            transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+            transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
         }
 
         .chip {
-            color: var(--panel-strong);
-            background: var(--accent);
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.84);
+            border-color: rgba(15, 92, 192, 0.16);
+            box-shadow: 0 10px 24px rgba(18, 38, 63, 0.06);
         }
 
         .chip:hover,
         .chip:focus-visible {
-            background: var(--accent-dark);
-            transform: translateY(-1px);
+            background: var(--accent);
+            color: var(--panel-strong);
+            transform: translateY(-3px);
+            box-shadow: 0 18px 30px rgba(18, 38, 63, 0.14);
         }
 
         .main {
@@ -165,6 +205,7 @@
         h2 {
             margin-bottom: 0.5rem;
             font-size: 1.45rem;
+            font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
         }
 
         .section-intro {
@@ -187,11 +228,20 @@
             background: var(--panel-strong);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .publication:hover,
+        .publication:focus-within {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 40px rgba(18, 38, 63, 0.12);
+            border-color: rgba(15, 92, 192, 0.18);
         }
 
         .publication h3 {
             margin-bottom: 0.4rem;
             font-size: 1.2rem;
+            font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
         }
 
         .publication-meta,
@@ -216,10 +266,11 @@
 
         .action {
             color: var(--accent);
-            background: rgba(176, 90, 60, 0.08);
-            border-color: rgba(176, 90, 60, 0.16);
+            background: var(--accent-soft);
+            border-color: rgba(15, 92, 192, 0.16);
             font-size: 0.95rem;
             font-weight: 600;
+            box-shadow: 0 8px 20px rgba(18, 38, 63, 0.05);
         }
 
         .action:hover,
@@ -227,7 +278,16 @@
             color: var(--panel-strong);
             background: var(--accent);
             border-color: var(--accent);
-            transform: translateY(-1px);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 28px rgba(18, 38, 63, 0.14);
+        }
+
+        .action.missing {
+            color: rgba(77, 97, 121, 0.7);
+            background: rgba(77, 97, 121, 0.08);
+            border-color: rgba(77, 97, 121, 0.12);
+            pointer-events: none;
+            box-shadow: none;
         }
 
         @media (max-width: 760px) {
@@ -262,7 +322,7 @@
         <header class="hero">
             <div class="headshot" aria-label="Headshot placeholder for Ben Foxman"></div>
             <div>
-                <p class="eyebrow">Personal Website</p>
+                <p class="eyebrow">Computer Science Research</p>
                 <h1>Ben Foxman</h1>
                 <p class="subtitle">
                     Add a one-line description of your work here, along with the links you want visitors to see first.
@@ -287,35 +347,63 @@
             <section class="section" aria-labelledby="publications-heading">
                 <h2 id="publications-heading">Publications</h2>
                 <p class="section-intro">
-                    Replace the titles, summaries, and links below with your actual papers. Each entry already includes the button layout you asked for.
+                    Selected papers and publications. Buttons are active where a link was provided and muted where a resource is not yet linked.
                 </p>
 
                 <div class="publication-list">
                     <article class="publication">
-                        <h3>Publication Title One</h3>
-                        <p class="publication-meta">Author One, Ben Foxman, Author Three • 2026</p>
+                        <h3>Random Unitaries in Constant (Quantum) Time</h3>
+                        <p class="publication-meta">Ben Foxman, Natalie Parham, Francisca Vasconcelos, Henry Yuen • QIP '26, ITCS '26</p>
                         <p class="publication-summary">
-                            A short summary of the contribution goes here. Keep this to one or two sentences so the list stays easy to scan.
+                            arXiv:2508.11487
                         </p>
                         <div class="publication-actions">
-                            <a class="action" href="https://arxiv.org/" target="_blank" rel="noreferrer">arxiv</a>
-                            <a class="action" href="papers/publication-one.pdf" target="_blank" rel="noreferrer">pdf</a>
-                            <a class="action" href="https://youtube.com/" target="_blank" rel="noreferrer">talk</a>
-                            <a class="action" href="slides/publication-one.pdf" target="_blank" rel="noreferrer">slides</a>
+                            <a class="action" href="https://arxiv.org/abs/2508.11487" target="_blank" rel="noreferrer">arxiv</a>
+                            <span class="action missing" aria-disabled="true">pdf</span>
+                            <span class="action missing" aria-disabled="true">talk</span>
+                            <span class="action missing" aria-disabled="true">slides</span>
                         </div>
                     </article>
 
                     <article class="publication">
-                        <h3>Publication Title Two</h3>
-                        <p class="publication-meta">Ben Foxman, Author Two • 2025</p>
+                        <h3>The Complexity of Shallow-Depth Feedforward Circuits</h3>
+                        <p class="publication-meta">Ben Foxman, Akshat Yaparla • Quantum OS '24</p>
                         <p class="publication-summary">
-                            Add a short description of the result, the venue, or the motivating problem for this paper.
+                            Abstract and poster available.
                         </p>
                         <div class="publication-actions">
-                            <a class="action" href="https://arxiv.org/" target="_blank" rel="noreferrer">arxiv</a>
-                            <a class="action" href="papers/publication-two.pdf" target="_blank" rel="noreferrer">pdf</a>
-                            <a class="action" href="https://youtube.com/" target="_blank" rel="noreferrer">talk</a>
-                            <a class="action" href="slides/publication-two.pdf" target="_blank" rel="noreferrer">slides</a>
+                            <span class="action missing" aria-disabled="true">arxiv</span>
+                            <span class="action missing" aria-disabled="true">pdf</span>
+                            <span class="action missing" aria-disabled="true">talk</span>
+                            <span class="action missing" aria-disabled="true">slides</span>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <h3>Systems Architecture for Quantum Random Access Memory</h3>
+                        <p class="publication-meta">Shifan Xu, Connor T. Hann, Ben Foxman, Steven M. Girvin, Yongshan Ding • MICRO '23</p>
+                        <p class="publication-summary">
+                            arXiv:2306.03242
+                        </p>
+                        <div class="publication-actions">
+                            <a class="action" href="https://arxiv.org/abs/2306.03242" target="_blank" rel="noreferrer">arxiv</a>
+                            <span class="action missing" aria-disabled="true">pdf</span>
+                            <span class="action missing" aria-disabled="true">talk</span>
+                            <span class="action missing" aria-disabled="true">slides</span>
+                        </div>
+                    </article>
+
+                    <article class="publication">
+                        <h3>Quantum Cognitive Modeling: New Applications and Systems Research Directions</h3>
+                        <p class="publication-meta">Raghavendra Pradyumna Pothukuchi, Leon Lufkin, Yu Jun Shen, Alejandro Simon, Rome Thorstenson, Bernardo Eilert Trevisan, Michael Tu, Mudi Yang, Ben Foxman, Viswanatha Srinivas Pothukuchi, Gunnar Epping, Bryant J. Jongkees, Thi Ha Kyaw, Jerome R. Busemeyer, Jonathan D. Cohen, Abhishek Bhattacharjee</p>
+                        <p class="publication-summary">
+                            arXiv:2309.00597
+                        </p>
+                        <div class="publication-actions">
+                            <a class="action" href="https://arxiv.org/abs/2309.00597" target="_blank" rel="noreferrer">arxiv</a>
+                            <span class="action missing" aria-disabled="true">pdf</span>
+                            <span class="action missing" aria-disabled="true">talk</span>
+                            <span class="action missing" aria-disabled="true">slides</span>
                         </div>
                     </article>
                 </div>
