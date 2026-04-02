@@ -164,8 +164,7 @@ h2 {
 
 .subtitle a {
     color: var(--accent);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.16em;
+    text-decoration: none;
 }
 
 .subtitle a:hover,
@@ -195,8 +194,7 @@ h2 {
 
 .bio a {
     color: var(--accent);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.16em;
+    text-decoration: none;
 }
 
 .bio a:hover,
