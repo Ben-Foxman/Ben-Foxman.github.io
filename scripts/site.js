@@ -1,5 +1,6 @@
 const componentTargets = Array.from(document.querySelectorAll("[data-include]"));
 const publicationButtonOrder = ["arxiv", "pdf", "talk", "slides"];
+const authorNameToHighlight = "Ben Foxman";
 
 async function loadText(path) {
     const response = await fetch(path);
@@ -39,16 +40,21 @@ function createButton(label, url) {
     return `<a class="action" href="${url}" target="_blank" rel="noreferrer">${label}</a>`;
 }
 
+function emphasizeAuthorName(authors) {
+    return authors.replaceAll(authorNameToHighlight, `<strong>${authorNameToHighlight}</strong>`);
+}
+
 function renderPublication(publication) {
     const venue = publication.venue ? ` • ${publication.venue}` : "";
     const actions = publicationButtonOrder
         .map((label) => createButton(label, publication.links?.[label]))
         .join("");
+    const authors = emphasizeAuthorName(publication.authors);
 
     return `
         <article class="publication">
             <h3>${publication.title}</h3>
-            <p class="publication-meta">${publication.authors}${venue}</p>
+            <p class="publication-meta">${authors}${venue}</p>
             <p class="publication-summary">${publication.summary}</p>
             <div class="publication-actions">${actions}</div>
         </article>

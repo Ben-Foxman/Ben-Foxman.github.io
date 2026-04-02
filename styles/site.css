@@ -254,6 +254,11 @@ h2 {
     font-size: 0.95rem;
 }
 
+.publication-meta strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
 .publication-summary {
     margin-bottom: 1rem;
 }
