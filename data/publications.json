@@ -5,16 +5,18 @@
         "venue": "In Submission",
         "summary": "We generalize the famous quantum Fourier transform (QFT) to semisimple algebras.",
         "links": {
-            "arxiv": "https://arxiv.org/abs/2306.03242"
+            "arxiv": "https://arxiv.org/abs/2306.03242",
+            "pdf": "papers/semisimple2026.pdf"
         }
     },
     {
         "title": "Random Unitaries in Constant (Quantum) Time",
         "authors": "Ben Foxman, Natalie Parham, Francisca Vasconcelos, Henry Yuen",
         "venue": "QIP '26, ITCS '26",
-        "summary": "We give extremely efficient circuits for random unitaries, with applications in quantum complexity theory and learning theory.",
+        "summary": "We give extremely efficient circuits for random unitaries, with applications in complexity theory and learning theory.",
         "links": {
-            "arxiv": "https://arxiv.org/abs/2508.11487"
+            "arxiv": "https://arxiv.org/abs/2508.11487",
+            "pdf": "papers/pru2025.pdf"
         }
     },
     {
@@ -23,7 +25,8 @@
         "venue": "MICRO '23",
         "summary": "We present a novel, error-resilient architecture for quantum random access memory (QRAM).",
         "links": {
-            "arxiv": "https://arxiv.org/abs/2306.03242"
+            "arxiv": "https://arxiv.org/abs/2306.03242",
+            "pdf": "papers/qram2023.pdf"
         }
     }
 ]
