@@ -9,28 +9,12 @@
         }
     },
     {
-        "title": "The Complexity of Shallow-Depth Feedforward Circuits",
-        "authors": "Ben Foxman, Akshat Yaparla",
-        "venue": "Quantum OS '24",
-        "summary": "Abstract and poster available.",
-        "links": {}
-    },
-    {
         "title": "Systems Architecture for Quantum Random Access Memory",
         "authors": "Shifan Xu, Connor T. Hann, Ben Foxman, Steven M. Girvin, Yongshan Ding",
         "venue": "MICRO '23",
         "summary": "arXiv:2306.03242",
         "links": {
             "arxiv": "https://arxiv.org/abs/2306.03242"
-        }
-    },
-    {
-        "title": "Quantum Cognitive Modeling: New Applications and Systems Research Directions",
-        "authors": "Raghavendra Pradyumna Pothukuchi, Leon Lufkin, Yu Jun Shen, Alejandro Simon, Rome Thorstenson, Bernardo Eilert Trevisan, Michael Tu, Mudi Yang, Ben Foxman, Viswanatha Srinivas Pothukuchi, Gunnar Epping, Bryant J. Jongkees, Thi Ha Kyaw, Jerome R. Busemeyer, Jonathan D. Cohen, Abhishek Bhattacharjee",
-        "venue": "",
-        "summary": "arXiv:2309.00597",
-        "links": {
-            "arxiv": "https://arxiv.org/abs/2309.00597"
         }
     }
 ]
