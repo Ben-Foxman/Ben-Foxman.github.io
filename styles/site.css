@@ -232,6 +232,56 @@ h2 {
     gap: 1rem;
 }
 
+.teaching-list {
+    display: grid;
+    gap: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.teaching-item {
+    padding: 1.15rem 1.25rem;
+    background: var(--panel-strong);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.teaching-item:hover,
+.teaching-item:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 40px rgba(18, 38, 63, 0.12);
+    border-color: rgba(15, 92, 192, 0.18);
+}
+
+.teaching-meta,
+.teaching-title {
+    margin-bottom: 0;
+}
+
+.teaching-meta {
+    margin-bottom: 0.3rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.teaching-title {
+    font-size: 1rem;
+}
+
+.teaching-note {
+    margin-bottom: 0;
+}
+
+.teaching-link {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.teaching-link:hover,
+.teaching-link:focus-visible {
+    color: var(--accent-dark);
+}
+
 .publication {
     padding: 1.35rem;
     background: var(--panel-strong);
