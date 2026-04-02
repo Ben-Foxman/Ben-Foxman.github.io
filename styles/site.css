@@ -307,14 +307,6 @@ h2 {
     box-shadow: 0 16px 28px rgba(18, 38, 63, 0.14);
 }
 
-.action.missing {
-    color: rgba(77, 97, 121, 0.7);
-    background: rgba(77, 97, 121, 0.08);
-    border-color: rgba(77, 97, 121, 0.12);
-    pointer-events: none;
-    box-shadow: none;
-}
-
 .sr-only {
     position: absolute;
     width: 1px;

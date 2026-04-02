@@ -34,7 +34,7 @@ async function renderComponents() {
 
 function createButton(label, url) {
     if (!url) {
-        return `<span class="action missing" aria-disabled="true">${label}</span>`;
+        return "";
     }
 
     return `<a class="action" href="${url}" target="_blank" rel="noreferrer">${label}</a>`;

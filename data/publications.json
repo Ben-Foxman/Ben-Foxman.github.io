@@ -3,9 +3,8 @@
         "title": "Efficient Quantum Fourier Transforms for Semisimple Algebras",
         "authors": "Ben Foxman, Barak Nehoran, Yongshan Ding",
         "venue": "In Submission",
-        "summary": "We generalize the famous quantum Fourier transform (QFT) to semisimple algebras.",
+        "summary": "We generalize the famous quantum Fourier transform (QFT) from finite groups to semisimple algebras.",
         "links": {
-            "arxiv": "https://arxiv.org/abs/2306.03242",
             "pdf": "papers/semisimple2026.pdf"
         }
     },
