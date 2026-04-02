@@ -88,7 +88,7 @@ a {
 }
 
 .headshot {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 6 / 5;
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
@@ -110,7 +110,7 @@ a {
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center 28%;
+    object-position: center center;
 }
 
 .eyebrow {
