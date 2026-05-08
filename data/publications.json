@@ -5,6 +5,7 @@
         "venue": "In Submission",
         "summary": "We generalize the famous quantum Fourier transform (QFT) from finite groups to semisimple algebras.",
         "links": {
+            "arxiv": "https://arxiv.org/abs/2605.05337",
             "pdf": "papers/semisimple2026.pdf"
         }
     },
