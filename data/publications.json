@@ -1,12 +1,23 @@
 [
     {
+        "title": "Quantum Lazy Sampling and Path Recording for Any Group",
+        "authors": "Ben Foxman, Alex Lombardi, Fermi Ma, Barak Nehoran, John Wright",
+        "venue": " ",
+        "summary": "We construct an interpretable compressed oracle that simulates random elements from any closed subgroup of the unitary group. In doing so, we show that a random permutation followed by a random Clifford is a pseudorandom unitary. ",
+        "links": {
+            "arxiv": "https://arxiv.org/abs/2606.30281",
+            "pdf": "papers/lazysampling2026.pdf"
+        }
+    },
+    {
         "title": "Efficient Quantum Fourier Transforms for Semisimple Algebras",
         "authors": "Ben Foxman, Barak Nehoran, Yongshan Ding",
         "venue": "In Submission",
         "summary": "We generalize the famous quantum Fourier transform (QFT) from finite groups to semisimple algebras.",
         "links": {
             "arxiv": "https://arxiv.org/abs/2605.05337",
-            "pdf": "papers/semisimple2026.pdf"
+            "pdf": "papers/semisimple2026.pdf",
+            "talk": "papers/semisimple2026slides.pdf"
         }
     },
     {
