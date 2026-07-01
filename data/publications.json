@@ -3,7 +3,7 @@
         "title": "Quantum Lazy Sampling and Path Recording for Any Group",
         "authors": "Ben Foxman, Alex Lombardi, Fermi Ma, Barak Nehoran, John Wright",
         "venue": " ",
-        "summary": "We construct an interpretable compressed oracle that simulates random elements from any closed subgroup of the unitary group. In doing so, we show that a random permutation followed by a random Clifford is a pseudorandom unitary. ",
+        "summary": "We construct an interpretable compressed oracle that simulates random elements from any closed subgroup of the unitary group. In doing so, we show that a random Clifford followed by a random permutation is a pseudorandom unitary. ",
         "links": {
             "arxiv": "https://arxiv.org/abs/2606.30281",
             "pdf": "papers/lazysampling2026.pdf"
