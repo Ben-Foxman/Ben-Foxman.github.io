@@ -181,6 +181,10 @@ h2 {
     font-size: 1.05rem;
 }
 
+.service-list {
+    margin-bottom: 0;
+}
+
 .bio a {
     color: var(--accent);
     text-decoration: none;
